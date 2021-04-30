@@ -1,10 +1,17 @@
 import React from "react";
+import Todo from "./component/Todo";
 
-export default function TodoList() {
+export default function TodoList(props) {
+
+  const renderTodoList = () => {
+    return props.tasks.map(task =>
+      <Todo task={task} deleteTask={props.deleteTask}/>
+    )
+  }
+
   return (
     <div>
-      <li>Cuci Baju <button>Hapus</button></li>
-      <li>Masak Nasi <button>Hapus</button></li>
+      {renderTodoList()}
     </div>
   );
 }
