@@ -10,15 +10,8 @@ export default function Todo(props){
     props.updateTaskCompletedStatus(props.task);
   }
 
-  const color = [
-    '#005b96',
-    '#03396c',
-    '#011f4b',
-  ];
-
   const dragStart = e => {
-    const target = e.target;
-    console.log(target.id);
+    const target = e.target;    
     e.dataTransfer.setData('task_id', target.id);
   }
 
@@ -28,8 +21,7 @@ export default function Todo(props){
 
   const getClassName = () => {
     let className = props.task.isComplete ? "todo-container complete" : "todo-container";
-    className = props.task.priority == 1 ? `${className} priority-tinggi` : `${className} priority-rendah`
-    console.log(className);
+    className = props.task.priority === 1 ? `${className} priority-tinggi` : `${className} priority-rendah`
     return className;
   }
   return (

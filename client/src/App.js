@@ -29,7 +29,7 @@ function App() {
 
   const updateTaskCompletedStatus = (updatedtask) => {
     let updatedTasks = tasks.map(task => {
-      task.id === updatedtask.id ? task.isComplete = !task.isComplete : task.isComplete = task.isComplete
+      task.isComplete = task.id === updatedtask.id ? !task.isComplete : task.isComplete
       return task;
     })
     setTasks(updatedTasks);
@@ -38,7 +38,7 @@ function App() {
   const updateTaskPriority = (taskId, priority) => {
     console.log(taskId, priority)
     let updatedTasks = tasks.map(task => {
-      task.id == taskId ? task.priority = priority : task.priority = task.priority
+      task.priority = task.id == taskId ? priority : task.priority
       return task;
     })
     setTasks(updatedTasks);
