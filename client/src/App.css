@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +31,127 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;  
+  width: 100%;
+  max-width: 768px;
+  min-height: 600px;
+  background: #161a2b;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+}
+
+.todo-list-wrapper{
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.todo-list-wrapper .board{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #d5d5d5;
+  padding: 20px;
+  margin: 20px;
+}
+
+.App h1{
+  color: white;
+}
+
+.todo-form button {
+  padding: 17px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    #b3cde0,
+    #6497b1 
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.todo-form input {
+  padding: 15px 32px 15px 16px;
+  border: 2px solid #b3cde0;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+.todo-form-prioritas {
+  padding: 14px 32px 14px 16px;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #b3cde0;
+  outline: none;
+  background: transparent;
+  color: #fff;
+}
+
+.todo-form-prioritas option{
+  color: #fff;
+  background-color: #161a2b;
+
+}
+
+.todo-form input::placeholder {
+  color: #e2e2e2;
+}
+
+.todo-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.priority-tinggi{
+  background: linear-gradient(
+    90deg,
+    #011f4b,
+    #005b96 
+  );
+}
+
+.priority-rendah{
+  background: linear-gradient(
+    90deg,
+    #005b96,
+    #b3cde0 
+  );
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.complete-icon {
+  color: #fff;
 }
