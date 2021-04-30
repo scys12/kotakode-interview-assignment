@@ -3,10 +3,13 @@ import { render } from '@testing-library/react';
 import TodoList from './TodoList';
 
 test('Renders Todo List Correctly', () => {
-  const { getByText } = render(<TodoList tasks={["masak ikan", "minum air"]} />);
-  const linkElement = getByText(/masak ikan/i);
+  const deleteTask = () => {
+    return;
+  };
+  const { getByText } = render(<TodoList tasks={["masak ikan", "minum air"]} deleteTask={deleteTask}/>);
+  let linkElement = getByText(/masak ikan/i);
   expect(linkElement).toBeInTheDocument();
 
-  const linkElement = getByText(/minum air/i);
+  linkElement = getByText(/minum air/i);
   expect(linkElement).toBeInTheDocument();
 });
