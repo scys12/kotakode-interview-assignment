@@ -7,7 +7,21 @@ const deleteTask = () => {
 };
 
 test('Renders Todo List Correctly', () => {
-  const { getByText } = render(<TodoList tasks={["masak ikan", "minum air"]} deleteTask={deleteTask}/>);
+  const tasks = [
+    {
+      id : 1,
+      text : "masak ikan",
+      isComplete: false,
+      priority: 0
+    },
+    {
+      id : 2,
+      text : "minum air",
+      isComplete: false,
+      priority: 1
+    }
+  ]
+  const { getByText } = render(<TodoList tasks={tasks} deleteTask={deleteTask}/>);
   let linkElement = getByText(/masak ikan/i);
   expect(linkElement).toBeInTheDocument();
 
